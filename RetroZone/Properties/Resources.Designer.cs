@@ -63,6 +63,16 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel {
+            get {
+                object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hH6CgGV {
             get {
                 object obj = ResourceManager.GetObject("hH6CgGV", resourceCulture);
@@ -86,6 +96,26 @@ namespace RetroZone.Properties {
         internal static System.Drawing.Bitmap hotel_ba57eb56 {
             get {
                 object obj = ResourceManager.GetObject("hotel.ba57eb56", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tools_stickers {
+            get {
+                object obj = ResourceManager.GetObject("tools_stickers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap v22_1 {
+            get {
+                object obj = ResourceManager.GetObject("v22_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
