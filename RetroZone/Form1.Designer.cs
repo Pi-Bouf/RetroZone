@@ -39,6 +39,7 @@
             this.panelCenterMainActivity = new System.Windows.Forms.Panel();
             this.pictureBoxHotelMainView = new System.Windows.Forms.PictureBox();
             this.bunifuDragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelLeftMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonNavigator)).BeginInit();
             this.panelTop.SuspendLayout();
@@ -61,6 +62,7 @@
             // bunifuImageButtonNavigator
             // 
             this.bunifuImageButtonNavigator.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButtonNavigator.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuImageButtonNavigator.Image = global::RetroZone.Properties.Resources.v22_1;
             this.bunifuImageButtonNavigator.ImageActive = null;
             this.bunifuImageButtonNavigator.Location = new System.Drawing.Point(7, 23);
@@ -146,6 +148,11 @@
             this.bunifuDragControl.TargetControl = this.panelTop;
             this.bunifuDragControl.Vertical = true;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +167,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.panelLeftMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButtonNavigator)).EndInit();
             this.panelTop.ResumeLayout(false);
@@ -182,6 +190,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabelMainTitle;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButtonClose;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
 

@@ -15,25 +15,32 @@ namespace RetroZone
     public partial class FormMain : Form
     {
         bool formMaximized = false;
-        //public BrowserView browserView = new WinFormsBrowserView();
+        public BrowserView browserView;
 
         public FormMain()
         {
+            BrowserPreferences.SetChromiumSwitches("--enable-npapi");
+
             InitializeComponent();
         }
 
         private void bunifuImageButtonClose_Click(object sender, EventArgs e)
         {
+            browserView.Dispose();
             this.Close();
         }
 
         private void bunifuImageButtonNavigator_Click(object sender, EventArgs e)
         {
-            /*
+            browserView = new WinFormsBrowserView();
+            browserView.Browser.CacheStorage.ClearCache(() =>
+            {
+                MessageBox.Show("Cache cleared ! :D <3");
+            });
             this.pictureBoxHotelMainView.Visible = false;
             this.panelCenterMainActivity.Controls.Add((Control)browserView);
-            browserView.Browser.LoadURL("http://google.fr");
-            */
+            browserView.Browser.LoadURL("http://51.38.184.88/cms");
+            
         }
 
         private void MaximizeWindow()
@@ -63,6 +70,11 @@ namespace RetroZone
             {
                 this.MaximizeWindow();
             }
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            browserView.Dispose();
         }
     }
 }
