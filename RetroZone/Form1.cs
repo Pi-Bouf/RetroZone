@@ -1,47 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DotNetBrowser;
-using DotNetBrowser.WinForms;
+using TabSystem.Tab;
 
 namespace RetroZone
 {
     public partial class FormMain : Form
     {
-        bool formMaximized = false;
-        public BrowserView browserView;
+
+        private TabControlSystem tabControlSystem = null;
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        private bool formMaximized = false;
 
         public FormMain()
         {
-            BrowserPreferences.SetChromiumSwitches("--enable-npapi");
-
             InitializeComponent();
         }
 
-        private void bunifuImageButtonClose_Click(object sender, EventArgs e)
+        #region Web browser (Noot to rewrite)
+        private void FormMain_Shown(object sender, EventArgs e)
         {
-            browserView.Dispose();
-            this.Close();
+            MaximizeWindow();
+            tabControlSystem = new TabControlSystem(this.panelCenterMainActivity);
+            tabControlSystem.newTabRequest("http://forum.ragezone.com/f353/", "Welcome");
+            this.pictureBoxHotelMainView.Visible = false;
         }
 
-        private void bunifuImageButtonNavigator_Click(object sender, EventArgs e)
+        private void pictureBoxNavigator_Click(object sender, EventArgs e)
         {
-            browserView = new WinFormsBrowserView();
-            browserView.Browser.CacheStorage.ClearCache(() =>
-            {
-                MessageBox.Show("Cache cleared ! :D <3");
-            });
-            this.pictureBoxHotelMainView.Visible = false;
-            this.panelCenterMainActivity.Controls.Add((Control)browserView);
-            browserView.Browser.LoadURL("http://51.38.184.88/cms");
             
         }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(this.tabControlSystem != null)
+            {
+                tabControlSystem.disposeTabControlSystem();
+            }
+        }
+        #endregion
+
+        #region Panel top event (Maximize, minimize, drag,...)
 
         private void MaximizeWindow()
         {
@@ -63,18 +63,33 @@ namespace RetroZone
 
         private void panelTop_DoubleClick(object sender, EventArgs e)
         {
-            if(this.formMaximized == true)
+            if (this.formMaximized == true)
             {
                 this.ResizableWindow();
-            } else
+            }
+            else
             {
                 this.MaximizeWindow();
             }
         }
 
-        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        private void bunifuImageButtonClose_Click(object sender, EventArgs e)
         {
-            browserView.Dispose();
+            this.Close();
         }
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void panelTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        #endregion
     }
 }
