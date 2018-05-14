@@ -21,9 +21,9 @@ namespace RetroZone
         #region Web browser (Noot to rewrite)
         private void FormMain_Shown(object sender, EventArgs e)
         {
-            MaximizeWindow();
             tabControlSystem = new TabControlSystem(this.panelCenterMainActivity);
-            tabControlSystem.newTabRequest("http://forum.ragezone.com/f353/", "Welcome");
+            //tabControlSystem.newTabRequest("http://www.1001games.fr/", "Welcome");
+            Console.WriteLine(typeof(Tab).FullName);
             this.pictureBoxHotelMainView.Visible = false;
         }
 
