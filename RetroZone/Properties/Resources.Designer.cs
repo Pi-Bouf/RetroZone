@@ -73,9 +73,9 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hH6CgGV {
+        internal static System.Drawing.Bitmap Duck {
             get {
-                object obj = ResourceManager.GetObject("hH6CgGV", resourceCulture);
+                object obj = ResourceManager.GetObject("Duck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hotel {
+        internal static System.Drawing.Bitmap HotelBackground {
             get {
-                object obj = ResourceManager.GetObject("hotel", resourceCulture);
+                object obj = ResourceManager.GetObject("HotelBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hotel_ba57eb56 {
+        internal static System.Drawing.Bitmap PageGoTo {
             get {
-                object obj = ResourceManager.GetObject("hotel.ba57eb56", resourceCulture);
+                object obj = ResourceManager.GetObject("PageGoTo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tools_stickers {
+        internal static System.Drawing.Bitmap PageHome {
             get {
-                object obj = ResourceManager.GetObject("tools_stickers", resourceCulture);
+                object obj = ResourceManager.GetObject("PageHome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,69 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap v22_1 {
+        internal static System.Drawing.Bitmap PageNext {
             get {
-                object obj = ResourceManager.GetObject("v22_1", resourceCulture);
+                object obj = ResourceManager.GetObject("PageNext", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PagePrevious {
+            get {
+                object obj = ResourceManager.GetObject("PagePrevious", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PageRefresh {
+            get {
+                object obj = ResourceManager.GetObject("PageRefresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TabAdd {
+            get {
+                object obj = ResourceManager.GetObject("TabAdd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TabClose {
+            get {
+                object obj = ResourceManager.GetObject("TabClose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UINavigator {
+            get {
+                object obj = ResourceManager.GetObject("UINavigator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UISettings {
+            get {
+                object obj = ResourceManager.GetObject("UISettings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
