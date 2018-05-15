@@ -14,3 +14,8 @@ Second: old people who want to have fun on retro gaming.
 
 ## What is the goal of this project ?
 The goal of this project ? Only have good time. When you want, where you want.
+
+# Disclaimer
+RetroZone uses DotNetBrowser http://www.teamdev.com/dotnetbrowser, which is a proprietary software, owned by TeamDev Ltd.
+The use of DotNetBrowser is governed by DotNetBrowser Product Licence Agreement http://www.teamdev.com/dotnetbrowser-licence-agreement.
+You may not use DotNetBrowser separately from RetroZone without explicit permission of TeamDev Ltd.
