@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RetroZone.Forms;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using TabSystem.Tab;
@@ -22,14 +23,14 @@ namespace RetroZone
         private void FormMain_Shown(object sender, EventArgs e)
         {
             tabControlSystem = new TabControlSystem(this.panelCenterMainActivity);
-            //tabControlSystem.newTabRequest("http://www.1001games.fr/", "Welcome");
-            Console.WriteLine(typeof(Tab).FullName);
+            tabControlSystem.newTabRequest("http://forum.ragezone.com/f353/", "Welcome");
             this.pictureBoxHotelMainView.Visible = false;
         }
 
         private void pictureBoxNavigator_Click(object sender, EventArgs e)
         {
-            
+            Form fD = new FormDirectory();
+            fD.Show();
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)

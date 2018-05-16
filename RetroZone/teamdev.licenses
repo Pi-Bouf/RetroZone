@@ -1,11 +1,13 @@
 Product: DotNetBrowser
 Version: 1.x
 Licensed to: 
-License type: Evaluation
-License info: Single-user license
-Expiration date: 13-06-2018
-Generation date: 14-05-2018
+License type: Runtime
+License info: Not for development
+Product binding: Bound to project
+Product binding info: -12zq4p4feobkenq3o8zb19qq93y
+Expiration date: NEVER
+Generation date: 16-05-2018
 Platforms: win32/x64;win32/x86
-Company name: NO COMPANY
-SigB: f6v27ipefsq3omaz27kppyus7aj140sp76i472zn0f47taedlch50t2onqn6961sofvs7yolriqocjl2
-SigA: ma14qjymmchynbilfiri4re80pym7brvgqd7twskqrfuor0awo6itsy4fvcvu318m2nou5xvwcp3grpl
+Company name: RetroZone
+SigB: f46b0qm2qai67aofss87szsb8powdvllbu4a6ejj4vtf4yv0kyituemklzjkuzaqixmq35drqf9ebska
+SigA: 25tci397sggr164qndq9hqp3ni93rkpxkzm87tf4ko3kadzabtpt8wmcj1e7jvn0cefm0rq9gq3h45om
