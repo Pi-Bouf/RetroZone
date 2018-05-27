@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RetroZone.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace RetroZone
@@ -13,7 +14,11 @@ namespace RetroZone
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+#if DEBUG
             Application.Run(new FormMain());
+#else
+            Application.Run(new SplashScreen());
+#endif
         }
     }
 }

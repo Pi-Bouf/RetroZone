@@ -1,20 +1,16 @@
-﻿using RetroZone.Forms;
+﻿using HttpClient;
+using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
-using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using TabSystem.Tab;
 
-namespace RetroZone
+namespace RetroZone.Forms
 {
-    public partial class FormMain : Form
+    public partial class FormMain : MaterialForm
     {
-
         private TabControlSystem tabControlSystem = null;
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-        private bool formMaximized = false;
-
         public FormMain()
         {
             this.loadDependencies();
@@ -38,78 +34,44 @@ namespace RetroZone
             };
         }
 
-        #region Web browser (Noot to rewrite)
-        private void FormMain_Shown(object sender, EventArgs e)
+        #region Form Event
+        private void Form1_Load(object sender, System.EventArgs e)
         {
-            tabControlSystem = new TabControlSystem(this.panelCenterMainActivity);
-            tabControlSystem.newTabRequest("http://forum.ragezone.com/f353/", "Welcome");
-            this.pictureBoxHotelMainView.Visible = false;
-        }
-
-        private void pictureBoxNavigator_Click(object sender, EventArgs e)
-        {
-            Form fD = new FormDirectory();
-            fD.Show();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            MaterialSkinManager skinManager = MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkinManager.Themes.DARK;
+            skinManager.ColorScheme = new ColorScheme(MaterialSkin.Primary.Green400, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Green100, Accent.Blue200, TextShade.WHITE);
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(this.tabControlSystem != null)
+            if (this.tabControlSystem != null)
             {
                 tabControlSystem.disposeTabControlSystem();
             }
-        }
-        #endregion
-
-        #region Panel top event (Maximize, minimize, drag,...)
-
-        private void MaximizeWindow()
-        {
-            var rectangle = Screen.FromControl(this).Bounds;
-            this.FormBorderStyle = FormBorderStyle.None;
-            Size = new Size(rectangle.Width, rectangle.Height);
-            Location = new Point(0, 0);
-            Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
-            this.Size = new Size(workingRectangle.Width, workingRectangle.Height);
-            this.formMaximized = true;
+            System.Environment.Exit(1);
         }
 
-        private void ResizableWindow()
+        private void pictureBoxHotelNavigator_Click(object sender, System.EventArgs e)
         {
-            this.Size = new Size(1300, 700);
-            this.CenterToScreen();
-            this.formMaximized = false;
-        }
-
-        private void panelTop_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.formMaximized == true)
+            if(this.tabControlSystem == null)
             {
-                this.ResizableWindow();
-            }
-            else
-            {
-                this.MaximizeWindow();
-            }
-        }
+                this.panelBrowser.Visible = true;
+                tabControlSystem = new TabControlSystem(this.panelBrowser);
+                tabControlSystem.newTabRequest("http://forum.ragezone.com/f353/", "Welcome");
+                this.pictureBoxHotelBackground.Visible = false;
 
-        private void bunifuImageButtonClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-        private void panelTop_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
+            } else
             {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
             }
         }
         #endregion
+
+        private void pictureBoxEditBrowser_Click(object sender, EventArgs e)
+        {
+            ApiCaller.GetAllHotels();
+        }
     }
 }

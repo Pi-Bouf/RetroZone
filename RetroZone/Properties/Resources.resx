@@ -124,17 +124,11 @@
   <data name="PageGoTo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PageGoTo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PagePrevious" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PagePrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PageHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PageHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HotelBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HotelBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PageNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PageNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,13 +142,25 @@
   <data name="Duck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Duck.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UINavigator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UINavigator.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UISettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UISettings.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Bunifu_UI_v1_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Libs\Bunifu_UI_v1.5.3.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AboutBrowser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AboutBrowser.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditBrowser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditBrowser.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HotelBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HotelBackground.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HotelNavigator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HotelNavigator.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RetroZoneLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RetroZoneLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpdateIndicator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpdateIndicator.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

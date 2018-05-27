@@ -41,6 +41,8 @@ namespace TabSystem.Tab.UI
         #region Toolbar event on browser
         public void registerEventOnToolbar()
         {
+            this.tabToolbarLayout.textBoxURL.Enter += new EventHandler(this.textBoxOnFocus);
+            this.tabToolbarLayout.textBoxURL.Leave += new EventHandler(this.textBoxLostFocus);
             this.tabToolbarLayout.textBoxURL.KeyPress += this.textBoxUrlKeyPress;
             this.tabToolbarLayout.homeButton.Click += this.homeButtonClick;
             this.tabToolbarLayout.refreshButton.Click += this.refreshButtonClick;
@@ -97,12 +99,23 @@ namespace TabSystem.Tab.UI
                 if (this.currentTab != null)
                 {
                     this.currentTab.changeURL(this.tabToolbarLayout.textBoxURL.Text);
+                    this.registerCurrentEvent();
                 }
                 else
                 {
                     this.tabControlSystem.newTabRequest(this.tabToolbarLayout.textBoxURL.Text, this.tabToolbarLayout.textBoxURL.Text);
                 }
             }
+        }
+
+        private void textBoxOnFocus(Object sender, EventArgs e)
+        {
+            this.unregisterCurrentEvent();
+        }
+
+        private void textBoxLostFocus(Object sender, EventArgs e)
+        {
+            this.registerCurrentEvent();
         }
         #endregion
 

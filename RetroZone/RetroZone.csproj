@@ -65,6 +65,9 @@
       <HintPath>..\..\MaterialSkin\MaterialSkin\bin\Release\MaterialSkin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp, Version=106.2.2.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.2.2\lib\net452\RestSharp.dll</HintPath>
     </Reference>
@@ -98,19 +101,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\FormDirectory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormDirectory.Designer.cs">
-      <DependentUpon>FormDirectory.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="HttpClient\HttpClient.cs" />
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HttpClient\Entity\Hotel.cs" />
+    <Compile Include="HttpClient\ApiCaller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -140,11 +144,11 @@
     <Compile Include="Tab\UI\TabToolbarLayout.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Forms\FormDirectory.resx">
-      <DependentUpon>FormDirectory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -166,18 +170,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HotelBackground.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="duck.ico" />
+    <None Include="Resources\UpdateIndicator.gif" />
+    <None Include="Resources\RetroZoneLogo.png" />
+    <None Include="Resources\HotelNavigator.gif" />
+    <None Include="Resources\HotelBackground.gif" />
+    <None Include="Resources\EditBrowser.gif" />
+    <None Include="Resources\Duck.gif" />
+    <None Include="Resources\AboutBrowser.gif" />
     <EmbeddedResource Include="Libs\Bunifu_UI_v1.5.3.dll" />
-    <Content Include="Resources\Duck.gif" />
     <EmbeddedResource Include="teamdev.licenses" />
-    <None Include="Resources\UISettings.gif" />
-    <None Include="Resources\UINavigator.gif" />
     <EmbeddedResource Include="Resources\TabClose.png" />
     <EmbeddedResource Include="Resources\TabAdd.png" />
     <EmbeddedResource Include="Resources\PageRefresh.png" />
@@ -198,8 +200,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="HttpClient\Entity\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

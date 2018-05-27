@@ -61,22 +61,22 @@ namespace RetroZone.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AboutBrowser {
+            get {
+                object obj = ResourceManager.GetObject("AboutBrowser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
         internal static byte[] Bunifu_UI_v1_5_3 {
             get {
                 object obj = ResourceManager.GetObject("Bunifu_UI_v1_5_3", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cancel {
-            get {
-                object obj = ResourceManager.GetObject("cancel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -93,9 +93,29 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EditBrowser {
+            get {
+                object obj = ResourceManager.GetObject("EditBrowser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HotelBackground {
             get {
                 object obj = ResourceManager.GetObject("HotelBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HotelNavigator {
+            get {
+                object obj = ResourceManager.GetObject("HotelNavigator", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +173,16 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RetroZoneLogo {
+            get {
+                object obj = ResourceManager.GetObject("RetroZoneLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TabAdd {
             get {
                 object obj = ResourceManager.GetObject("TabAdd", resourceCulture);
@@ -173,19 +203,9 @@ namespace RetroZone.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap UINavigator {
+        internal static System.Drawing.Bitmap UpdateIndicator {
             get {
-                object obj = ResourceManager.GetObject("UINavigator", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UISettings {
-            get {
-                object obj = ResourceManager.GetObject("UISettings", resourceCulture);
+                object obj = ResourceManager.GetObject("UpdateIndicator", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
