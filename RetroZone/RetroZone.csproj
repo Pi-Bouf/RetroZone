@@ -50,8 +50,10 @@
     <ApplicationIcon>duck.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\DLL\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Bunifu_UI_v1.5.3.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DotNetBrowser, Version=1.6.4.0, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetBrowser.1.6.4\lib\DotNetBrowser.dll</HintPath>
@@ -59,10 +61,17 @@
     <Reference Include="DotNetBrowser.Chromium, Version=1.6.4.0, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetBrowser.1.6.4\lib\DotNetBrowser.Chromium.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\..\MaterialSkin\MaterialSkin\bin\Release\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="RestSharp, Version=106.2.2.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.2.2\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,6 +110,7 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttpClient\HttpClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -163,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="duck.ico" />
+    <EmbeddedResource Include="Libs\Bunifu_UI_v1.5.3.dll" />
     <Content Include="Resources\Duck.gif" />
     <EmbeddedResource Include="teamdev.licenses" />
     <None Include="Resources\UISettings.gif" />
@@ -186,6 +197,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HttpClient\Entity\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

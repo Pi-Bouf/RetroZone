@@ -61,6 +61,16 @@ namespace RetroZone.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        internal static byte[] Bunifu_UI_v1_5_3 {
+            get {
+                object obj = ResourceManager.GetObject("Bunifu_UI_v1_5_3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap cancel {

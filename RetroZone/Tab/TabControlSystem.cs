@@ -20,6 +20,7 @@ namespace TabSystem.Tab
             this.createUI();
 
             BrowserPreferences.SetChromiumSwitches("--enable-npapi");
+            //BrowserPreferences.SetChromiumSwitches("--enable-smooth-scrolling");
         }
 
         private void createUI()
