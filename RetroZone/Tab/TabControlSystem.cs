@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using TabSystem.Tab.UI;
 using System.Linq;
+using System;
 
 namespace TabSystem.Tab
 {
@@ -91,6 +92,9 @@ namespace TabSystem.Tab
             {
                 t.disposeTab();
             }
+
+            this.tabPane.Dispose();
+            this.tabToolbar.disposeToolbar();
         }
     }
 }

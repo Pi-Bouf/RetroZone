@@ -1,7 +1,14 @@
 ﻿using HttpClient;
+using HttpClient.Entity;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
 using TabSystem.Tab;
@@ -11,27 +18,12 @@ namespace RetroZone.Forms
     public partial class FormMain : MaterialForm
     {
         private TabControlSystem tabControlSystem = null;
+        private bool needUpdate = false;
+
         public FormMain()
         {
-            this.loadDependencies();
             InitializeComponent();
-        }
-
-        private void loadDependencies()
-        {
-            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
-            {
-                string resourceName = new AssemblyName(args.Name).Name + ".dll";
-                Console.WriteLine(resourceName);
-                string resource = Array.Find(this.GetType().Assembly.GetManifestResourceNames(), element => element.EndsWith(resourceName));
-
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resource))
-                {
-                    Byte[] assemblyData = new Byte[stream.Length];
-                    stream.Read(assemblyData, 0, assemblyData.Length);
-                    return Assembly.Load(assemblyData);
-                }
-            };
+            checkUpdate();
         }
 
         #region Form Event
@@ -55,6 +47,12 @@ namespace RetroZone.Forms
 
         private void pictureBoxHotelNavigator_Click(object sender, System.EventArgs e)
         {
+            if(this.needUpdate == true)
+            {
+                MessageBox.Show("Sorry, you can't use this version. Please, update on top right corner ! ;)");
+                return;
+            }
+
             if(this.tabControlSystem == null)
             {
                 this.panelBrowser.Visible = true;
@@ -67,11 +65,52 @@ namespace RetroZone.Forms
 
             }
         }
+
+        private async void pictureBoxEditBrowser_Click(object sender, EventArgs e)
+        {
+            List<Hotel> hotels = await ApiCaller.GetAllHotels();
+            Console.WriteLine(hotels);
+        }
         #endregion
 
-        private void pictureBoxEditBrowser_Click(object sender, EventArgs e)
+        #region Update system
+        public async void checkUpdate()
         {
-            ApiCaller.GetAllHotels();
+            Timer timer = new Timer();
+            timer.Interval = 3000;
+            timer.Tick += async delegate
+            {
+                timer.Stop();
+                HttpClient.Entity.Version version = await ApiCaller.checkVersion();
+                if(version.lastUpdate != ApiCaller.APIVersion)
+                {
+                    materialLabelUpdate.Location = new Point(1050, 32);
+                    materialLabelUpdate.Visible = true;
+                    
+                    pictureBoxUpdateIndicator.Visible = true;
+                    materialLabelUpdate.Text = "Click to update !";
+                    materialLabelUpdate.Click += delegate
+                    {
+                        if (File.Exists("RetroZone-Updater.exe"))
+                        {
+                            Process.Start("RetroZone-Updater.exe");
+                        }
+                    };
+                }
+                if(version.authorized != true)
+                {
+                    this.needUpdate = true;
+                    if (this.tabControlSystem != null)
+                    {
+                        this.tabControlSystem.disposeTabControlSystem();
+                        this.panelBrowser.Visible = false;
+                        this.pictureBoxHotelBackground.Visible = true;
+                        MessageBox.Show("Sorry, you can't use this version. Please, update on top right corner ! ;)");
+                    }
+                }
+            };
+            timer.Start();
         }
+        #endregion
     }
 }

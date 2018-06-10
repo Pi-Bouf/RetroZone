@@ -18,6 +18,11 @@ namespace TabSystem.Tab.UI
             this.registerEventOnToolbar();
         }
 
+        public void disposeToolbar()
+        {
+            this.tabToolbarLayout.Dispose();
+        }
+
         public TabToolbarLayout GetTabToolbarLayout()
         {
             return this.tabToolbarLayout;

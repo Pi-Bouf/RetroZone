@@ -7,14 +7,6 @@ namespace TabSystem.Tab.UI
 {
     class TabToolbarLayout : TableLayoutPanel
     {
-        #region Template
-        // -- ToolBarPanel
-        // -- PreviousButton
-        // -- NextButton
-        // -- RefreshButton
-        // -- HomeButton
-        // -- TextBoxURL
-        #endregion
 
         private Tab tab = null;
         public ImageButton previousButton { get; set; }

@@ -1,5 +1,7 @@
-﻿using DotNetBrowser.Events;
+﻿using DotNetBrowser;
+using DotNetBrowser.Events;
 using DotNetBrowser.WinForms;
+using RetroZone.Tab;
 using System.Windows.Forms;
 using TabSystem.Tab.UI;
 
@@ -60,6 +62,7 @@ namespace TabSystem.Tab
             this.browserView = new WinFormsBrowserView();
             this.browserView.Browser.CacheStorage.ClearCache();
             this.browserView.Browser.LoadURL(this.url);
+            this.browserView.Browser.PopupHandler = new TabPopupHandler(Application.OpenForms[0]);
 
             this.browserView.Browser.TitleChangedEvent += delegate(object sender, TitleEventArgs e)
             {

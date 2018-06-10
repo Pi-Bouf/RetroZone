@@ -38,6 +38,7 @@
             this.pictureBoxLogoDuck = new System.Windows.Forms.PictureBox();
             this.pictureBoxHotelBackground = new System.Windows.Forms.PictureBox();
             this.panelBrowser = new System.Windows.Forms.Panel();
+            this.backgroundWorkerUpdate = new System.ComponentModel.BackgroundWorker();
             this.panelRightMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAboutBrowser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditBrowser)).BeginInit();
@@ -100,6 +101,7 @@
             this.materialLabelUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabelUpdate.AutoSize = true;
             this.materialLabelUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabelUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialLabelUpdate.Depth = 0;
             this.materialLabelUpdate.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabelUpdate.FontSize = 11F;
@@ -110,6 +112,7 @@
             this.materialLabelUpdate.Size = new System.Drawing.Size(96, 19);
             this.materialLabelUpdate.TabIndex = 4;
             this.materialLabelUpdate.Text = "New update !";
+            this.materialLabelUpdate.Visible = false;
             // 
             // pictureBoxUpdateIndicator
             // 
@@ -122,6 +125,7 @@
             this.pictureBoxUpdateIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxUpdateIndicator.TabIndex = 5;
             this.pictureBoxUpdateIndicator.TabStop = false;
+            this.pictureBoxUpdateIndicator.Visible = false;
             // 
             // pictureBoxLogoDuck
             // 
@@ -168,6 +172,7 @@
             this.Controls.Add(this.pictureBoxLogoDuck);
             this.Controls.Add(this.panelRightMenu);
             this.Controls.Add(this.pictureBoxHotelBackground);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 0);
             this.MinimumSize = new System.Drawing.Size(763, 542);
             this.Name = "FormMain";
@@ -200,6 +205,7 @@
         private System.Windows.Forms.PictureBox pictureBoxUpdateIndicator;
         private System.Windows.Forms.PictureBox pictureBoxHotelBackground;
         private System.Windows.Forms.Panel panelBrowser;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerUpdate;
     }
 }
 
