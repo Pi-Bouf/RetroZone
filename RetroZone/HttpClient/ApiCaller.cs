@@ -3,8 +3,6 @@ using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,7 +11,7 @@ namespace HttpClient
     class ApiCaller
     {
         public static string APIUrl = "http://retrozone.pierreb.tk";
-        public const string APIVersion = "BETA-20180527";
+        public const string APIVersion = "BETA-001";
 
         #region checkUpdate
         public static async Task<Entity.Version> checkVersion()
